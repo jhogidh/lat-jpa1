@@ -2,6 +2,7 @@ package com.enigma.studentpathfinder.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.postgresql.shaded.com.ongres.stringprep.Profile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,4 +40,11 @@ public class Student {
             inverseJoinColumns = @JoinColumn(name="skill_id")
     )
     private List<Skill> skills = new ArrayList<>();
+
+
+    private void setProfile(StudentProfile profile){
+        this.profile = profile;
+        if(profile != null) profile.setStudent(this);
+    }
+
 }

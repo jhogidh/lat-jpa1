@@ -21,8 +21,5 @@ public class App {
             log.error("gagal konek nih ");
         }
 
-
-
-
     }
 }
