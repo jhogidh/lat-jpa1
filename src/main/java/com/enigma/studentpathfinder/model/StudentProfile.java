@@ -16,7 +16,7 @@ import lombok.*;
 public class StudentProfile {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     private String address;
 
