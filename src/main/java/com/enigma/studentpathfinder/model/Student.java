@@ -41,7 +41,6 @@ public class Student {
     )
     private List<Skill> skills = new ArrayList<>();
 
-
     private void setProfile(StudentProfile profile){
         this.profile = profile;
         if(profile != null) profile.setStudent(this);
