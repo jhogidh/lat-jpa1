@@ -3,6 +3,9 @@ package com.enigma.studentpathfinder.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "student", indexes = {
         //bikin index @Index(name, column)
@@ -25,5 +28,10 @@ public class Student {
 
     @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
     private StudentProfile profile;
+
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
+    private List<Project> project = new ArrayList<>();
+
+
 
 }

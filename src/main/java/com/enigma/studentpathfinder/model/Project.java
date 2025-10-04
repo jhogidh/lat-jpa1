@@ -19,4 +19,9 @@ public class Project {
     @Column(nullable = false)
     private String title;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "student_id")
+    private Student student;
+
+
 }
