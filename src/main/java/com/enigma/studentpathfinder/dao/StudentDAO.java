@@ -10,7 +10,11 @@ import java.util.List;
 import java.util.Optional;
 
 public class StudentDAO implements BaseDAO<Student, Long>{
-    private final EntityManager em = JPAConfig.getEm();
+    private final EntityManager em;
+
+    public StudentDAO(EntityManager em){
+        this.em = em;
+    }
 
     @Override
     public void save(Student student) {
