@@ -23,4 +23,7 @@ public class Student {
     private String name;
     private String email;
 
+    @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
+    private StudentProfile profile;
+
 }

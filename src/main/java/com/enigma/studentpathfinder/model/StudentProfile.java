@@ -12,7 +12,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@ToString
+@ToString(exclude = "student")
 public class StudentProfile {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,6 +23,8 @@ public class StudentProfile {
     @Column(name = "phone_number", length = 20, nullable = false)
     private String phoneNumber;
 
-
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="student_id", unique = true)
+    private Student student;
 
 }
