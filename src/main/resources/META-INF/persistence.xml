@@ -10,6 +10,10 @@
 
         <!-- Register Entites-->
         <!-- register here-->
+        <class>com.enigma.studentpathfinder.model.Student</class>
+        <class>com.enigma.studentpathfinder.model.StudentProfile</class>
+        <class>com.enigma.studentpathfinder.model.Project</class>
+        <class>com.enigma.studentpathfinder.model.Skill</class>
 
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
