@@ -1,6 +1,7 @@
 package com.enigma.studentpathfinder;
 
 import com.enigma.studentpathfinder.config.JPAConfig;
+import com.enigma.studentpathfinder.delivery.Server;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -14,12 +15,12 @@ public class App {
         // For this project :
         // mvn clean compile --% exec:java -Dexec.mainClass=com.enigma.studentpathfinder.App
 
-        try(var db = JPAConfig.getEm()){
-            log.info("ini udah konek");
-        }catch (Exception e){
-            JPAConfig.disconnect();
-            log.error("gagal konek nih ");
-        }
+        log.info("Aplikasi dimulai");
+
+        Server server = Server.serve();
+        server.run();
+
+        log.info("Aplikasi dihentikan");
 
     }
 }
