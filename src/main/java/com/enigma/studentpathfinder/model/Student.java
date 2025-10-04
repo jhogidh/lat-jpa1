@@ -32,6 +32,11 @@ public class Student {
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
     private List<Project> project = new ArrayList<>();
 
-
-
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinTable(
+            name = "student_skills",
+            joinColumns = @JoinColumn(name = "student_id"),
+            inverseJoinColumns = @JoinColumn(name="skill_id")
+    )
+    private List<Skill> skills = new ArrayList<>();
 }
